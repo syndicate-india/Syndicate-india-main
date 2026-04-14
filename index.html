@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SyndicateIndia.gov.in</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+  background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+              url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b');
+  background-size: cover;
+  color:white;
+}
+
+/* NAVBAR */
+.navbar{
+  position:fixed;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  padding:12px 20px;
+  border-radius:15px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(15px);
+  display:flex;
+  justify-content:space-between;
+  z-index:1000;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.brand img{height:35px;}
+.brand-name{color:#38bdf8;font-weight:600;}
+
+.nav-links span{
+  margin-left:20px;
+  cursor:pointer;
+}
+.nav-links span:hover{color:#38bdf8;}
+
+/* PAGES */
+.page{
+  display:none;
+  min-height:100vh;
+  animation:fade .4s ease;
+}
+
+.active{display:block;}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(10px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* HOME */
+.banner{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.banner-box{
+  text-align:center;
+  padding:40px;
+  border-radius:25px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(20px);
+}
+
+.banner-logo{
+  height:80px;
+  margin-bottom:10px;
+}
+
+.banner-box h1{
+  font-size:45px;
+  background:linear-gradient(to right,#38bdf8,#818cf8);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.btn{
+  margin-top:15px;
+  padding:10px 22px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(45deg,#38bdf8,#6366f1);
+  color:white;
+  cursor:pointer;
+}
+
+/* CARDS */
+.container{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:25px;
+  margin-top:120px;
+}
+
+.card{
+  width:250px;
+  padding:25px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.08);
+  text-align:center;
+  transition:.3s;
+}
+
+.card:hover{transform:translateY(-10px);}
+
+/* CONTACT */
+.contact-box{
+  width:90%;
+  max-width:500px;
+  margin:120px auto;
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  background:rgba(255,255,255,0.08);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="brand">
+    <img src="https://i.ibb.co/PvHhQR46/file-0000000001b071f8b9f2c2ce7575a138.png">
+    <div class="brand-name">EduSetu</div>
+  </div>
+
+  <div class="nav-links">
+    <span onclick="showPage('home')">Home</span>
+    <span onclick="showPage('services')">Services</span>
+    <span onclick="showPage('join')">Join</span>
+    <span onclick="showPage('contact')">Contact</span>
+  </div>
+</div>
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <div class="banner">
+    <div class="banner-box">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" class="banner-logo">
+      <h1>Syndicate.edu.in</h1>
+      <p>Your Smart Education Gateway</p>
+      <button class="btn" onclick="showPage('services')">Get Started</button>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div id="services" class="page">
+  <div class="container">
+
+    <div class="card">
+      <h3>CBSE Result</h3>
+      <button class="btn" onclick="openSite('https://results.cbse.nic.in')">View</button>
+    </div>
+
+    <div class="card">
+      <h3>CBSE Website</h3>
+      <button class="btn" onclick="openSite('https://www.cbse.gov.in')">Open</button>
+    </div>
+
+    <div class="card">
+      <h3>Edudel</h3>
+      <button class="btn" onclick="openSite('https://www.edudel.nic.in')">Open</button>
+    </div>
+      <div class="container">
+
+    <div class="card">
+      <h3>Join Group</h3>
+      <p style="color:#94a3b8;font-size:13px;margin-top:5px;">
+        Fill form to join group
+      </p>
+      <button class="btn" onclick="openSite('https://syndicate-india.github.io/Registration-system/')">
+        Join Form
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- JOIN -->
+<div id="join" class="page">
+  <div class="container">
+
+    <div class="card">
+      <h3>Join Group</h3>
+      <p style="color:#94a3b8;font-size:13px;margin-top:5px;">
+        Fill form to join group
+      </p>
+      <button class="btn" onclick="openSite('https://syndicate-india.github.io/Registration-system/')">
+        Join Form
+      </button>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+  <div class="contact-box">
+    <h2>Contact Us</h2>
+    <p style="color:#94a3b8;margin-top:10px;">
+      Any issue related to studies? Contact us anytime.
+    </p>
+
+    <button class="btn" onclick="openSite('https://docs.google.com/forms/d/e/1FAIpQLSfR7J9HIt4J-EfVPVlWet4OBbla45pAzMj9J2NfJOe9YjMfUw/viewform?usp=header')">
+      Submit Issue
+    </button>
+  </div>
+</div>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function openSite(url){
+  window.open(url,'_blank');
+}
+
+/* CHECK STUDENT ID */
+function checkID(){
+  let id = document.getElementById("studentInput").value;
+
+  if(!id){
+    alert("Enter Student ID");
+    return;
+  }
+
+  alert("Website pr jake dekh");
+
+  fetch("https://script.google.com/macros/s/AKfycbxxHW11dIzfA2Px8wS2lMkObShvz3CD1CHGbFSzuESlyfG3RrfP0y2aZePtqDlulpYxsA/exec?studentID="+id)
+  .then(res=>res.text())
+  .then(data=>alert(data))
+  .catch(()=>alert("Abe Sale website pr jake dekh"));
+}
+</script>
+
+</body>
+  </html>
